@@ -1,0 +1,180 @@
+<div class="container-fluid text" *ngIf="selectedChat.id!=0" >
+                    
+                   
+                
+    <div class="row p-2" >
+        <div class="col-12 justify-content-center d-flex"  style="color: white; font-weight: 500;">
+            CHATTING WITH {{selectedChat.chatName | uppercase }}
+            {{selectedChat.id}}
+          
+        </div>
+        
+        <div class="col-12">
+
+            <div *ngFor="let message of selectedChat.messages">
+
+                <div class="row" >
+
+                                <div class="float-end col-12"   *ngIf="message.authorId ==userD.id"> 
+                                    
+                                    <div class="row">
+
+                                        <div class="col-9"> 
+
+                                        </div>
+
+                                        <div class="col-3 " >
+                                            <div class="message">
+                                                {{message.text}}
+                                            </div>
+                                            
+                                        </div>
+
+                                    </div>
+
+                                    
+                           
+                                </div>
+
+                            <div class="col-12" *ngIf="message.authorId !=userD.id">
+                               
+                                
+                                <div class="row">
+
+                                    <div class="col-3 "  >
+                                        <div class="messageStranger">
+                                            {{message.text}}
+                                        </div>
+                                       
+                                    </div>
+
+                                    <div class="col-9"> 
+
+                                    </div>
+
+                                </div>
+
+                                
+                              
+                        
+                            </div>
+                            <div class="my-2" style="min-height: 2rem;"></div>
+
+
+                </div>
+
+            </div>
+
+            <div *ngFor="let messageNow of webSocketSerice.chatMessages">
+
+              
+                <div class="row">
+
+
+
+                    <div class="float-end col-12"  *ngIf="messageNow.authorId ==userD.id
+                    && messageNow.chatId==selectedChat.id"> 
+                                    
+                        <div class="row">
+
+                            <div class="col-9"> 
+
+                            </div>
+
+                            <div class="col-3 " >
+                                <div class="message">
+                                    <div  > 
+                                       
+                                            {{messageNow.text}}
+                                     
+                                  
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+
+                        
+               
+                    </div>
+
+
+
+               
+
+                    <div class="col-12" *ngIf="messageNow.authorId !=userD.id
+                    && messageNow.chatId==selectedChat.id">
+                               
+                                
+                        <div class="row">
+
+                            <div class="col-3 "  >
+                                <div class="messageStranger">
+                                    <div  >
+                                        <div>
+                                            {{messageNow.text}}
+                                        </div>
+                                  
+                                    </div>
+                                </div>
+                               
+                            </div>
+
+                            <div class="col-9"> 
+
+                            </div>
+
+                        </div>
+
+                        
+                      
+                
+                    </div>
+                    
+
+                    <div *ngIf="messageNow.chatId==selectedChat.id" class="my-2" style="min-height: 2rem;"></div>
+
+
+                </div>
+               
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="col-10"  style="margin-top: 17rem;">
+            <input  class="form-control input-text" [(ngModel)]="text">
+        </div>
+
+        <div class="col-2"  style="margin-top: 17rem;">
+            <button class="btn btn-primary" type="submit" (keyup.enter)="sendMessage(selectedChat)"
+             (click)="sendMessage(selectedChat)">CLICK</button>
+        </div>
+
+    </div>
+    
+
+</div>
+
+
+<div class="container-fluid text" *ngIf="selectedChat.id==0" >
+                    
+                   
+                
+    <div class="row p-2">
+        
+        
+        <div class="col-12 justify-content-center d-flex select"  style="margin-top: 8rem;">
+            SELECT CHAT
+        </div>
+
+    </div>
+    
+
+</div>

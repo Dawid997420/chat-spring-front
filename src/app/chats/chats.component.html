@@ -1,0 +1,47 @@
+<header>
+
+<nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1 pointer">Navbar</span>
+
+    <span class="navbar-brand mb-0 float-left pointer">{{userD.username}}</span>
+    <span class="float-left navbar-brand pointer" (click)="logout()">Logout</span>
+  </nav>
+
+</header>
+
+
+<main style="min-height: 400px;">
+
+    <div class="container-fluid " >
+
+            <div class="row" >
+
+
+                <div class="col-4  ">
+
+                    <div class="row" *ngFor="let chat of chats" >
+                        <div class="chats col-12" (click)="selectChat(chat)">
+                            {{chat.chatName}}
+                          </div>
+                    </div>
+                
+                        
+                   
+
+
+                </div>
+
+                <div class="col-8">
+
+                    <app-selected-chat #selected *ngIf="selectedChat.id!=null" 
+                     [userD]="userD" [selectedChat]="selectedChat"></app-selected-chat>
+                </div>
+
+            </div>
+
+    </div>
+
+
+
+
+</main>

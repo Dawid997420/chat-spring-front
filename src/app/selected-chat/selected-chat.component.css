@@ -1,0 +1,45 @@
+.text {
+    min-height: 20rem;
+    background-color: rgb(103, 100, 100)
+}
+
+.input-text{
+ 
+    bottom: 0;
+}
+
+.select {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+
+.message {
+    width: auto;
+    max-width: 30rem;
+    left:100;
+     background-color:#0099FF;
+     color: white;
+    border-radius: 15px;
+    padding: 4px;
+    font-weight: 500;
+    float: right;
+       
+    word-break: break-word;
+}
+
+
+.messageStranger {
+    padding: 4px;
+    width: auto;
+    max-width: 30rem;
+    left:100;
+     background-color:#F2F3F5;
+     color: rgb(0, 0, 0);
+    border-radius: 15px;
+    font-weight: 400;
+    float: left;
+   
+    word-break: break-word;
+}
