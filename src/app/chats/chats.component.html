@@ -20,7 +20,8 @@
                 <div class="col-4  ">
 
                     <div class="row" *ngFor="let chat of chats" >
-                        <div class="chats col-12" (click)="selectChat(chat)">
+                        <div class="chats col-12" (click)="selectChat(chat)" 
+                        [class.newMessage]="newMessage(chat.id)">
                             {{chat.chatName}}
                           </div>
                     </div>

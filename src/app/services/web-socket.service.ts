@@ -72,6 +72,7 @@ export class WebSocketService {
       this.chatMessage = JSON.parse(hello.body);  
       this.chatMessages.push(this.chatMessage);                
       console.log("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO   " +hello.body )
+   
       
       });
    });
@@ -95,7 +96,9 @@ export class WebSocketService {
         this.chatMessage = JSON.parse(hello.body);  
         this.chatMessages.push(this.chatMessage);                
         console.log("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO   " +hello.body )
-        
+          
+   
+ 
         });
      });
       console.log("STATUSSS              " +this.stompClient.active)

@@ -55,6 +55,37 @@ export class ChatsComponent implements OnInit {
     
   }
 
+
+  newMessage(id:number) {
+
+    if ( this.selectedChat.id == id) {
+      console.log(this.selectedChat.id + "   " + id)
+      return false;
+    }
+    
+    let showKlasa= false
+
+    for ( let i = 0 ; i < this.webSocketSerice.chatMessages.length ; i++) {
+
+
+
+        if ( this.webSocketSerice.chatMessages[i].chatId == id) {
+
+          return true;
+        }
+
+    }
+
+   // author = sessionStorage.getItem("username")
+
+ 
+
+
+    return false;
+
+  }
+
+
   selectChat(chat:Chat){
  
  //   let chatMessageStompWithId: ChatMessage[]=[]
@@ -66,7 +97,9 @@ export class ChatsComponent implements OnInit {
 
     this.httpService.getChatById(chat.id).subscribe(response =>{
 
-
+     
+      
+      //this.selectedChat=chat;
 
       for ( let i = 0 ; i < this.webSocketSerice.chatMessages.length ; i++ ) {
       
@@ -82,7 +115,7 @@ export class ChatsComponent implements OnInit {
       
  
       this.selectedChat=response;
-    
+      console.log(" IDDDD CHATTTTT" +  this.selectedChat.id)
      // location.reload()
       
       sessionStorage.setItem("selectedChat",JSON.stringify(this.selectedChat))

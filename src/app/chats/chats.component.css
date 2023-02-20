@@ -12,7 +12,7 @@
 .chats {
     text-align: center;
     margin: 0px;
-    background-color: royalblue;
+    background-color:  rgb(102, 124, 190);
     padding: 10px;
     color: aliceblue;
     font-size: 20px;
@@ -24,7 +24,7 @@
     cursor: pointer;
     text-align: center;
     margin: 0px;
-    background-color: rgb(93, 121, 203);
+    background-color:  rgb(108, 129, 193);
 
     background-color: rgb(0, 7, 28);
 
@@ -42,4 +42,9 @@
 .input-text{
  
     bottom: 0;
+}
+
+
+.newMessage{
+    background-color: rgb(180, 51, 51);
 }
